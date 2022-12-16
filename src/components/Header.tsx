@@ -8,7 +8,7 @@ function Header(): JSX.Element {
 	const view = useAppSelector(selectCurrentView);
 
 	return (
-		<header className="bg-white">
+		<header>
 			{view === ViewTypes.MOBILE ? <MobileHeader /> : <DesktopHeader />}
 		</header>
 	);

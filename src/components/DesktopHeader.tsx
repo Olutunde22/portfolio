@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 function DesktopHeader(): JSX.Element {
 	return (
-		<nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
+		<nav className="2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4 fixed bg-white w-screen">
 			<div className="flex justify-between ">
 				<NavLink to="/" className="flex space-x-3 items-center">
 					<DynamicHeroIcon icon="CommandLineIcon" className="h-8 w-8" />

@@ -8,7 +8,7 @@ function LandingPage(): JSX.Element {
 				<title>Home | Olutunde Solabi</title>
 			</Helmet>
 			<section className="bg-black h-screen flex justify-center items-center text-white">
-				<h1 className="text-4xl">Hello, I am Olutunde Solabi</h1>
+				<h1 className="text-xl lg:text-4xl">Hello, I am Olutunde Solabi</h1>
 			</section>
 		</Layout>
 	);
