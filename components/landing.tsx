@@ -48,12 +48,10 @@ export default function Landing() {
 				transition={{ duration: 0.5, delay: 0.4 }}
 			>
 				<a
-					className="email-link"
-					href="https://www.newline.co/courses/build-a-spotify-connected-app"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Check out my course!
+					Yahoo
 				</a>
 			</motion.div>
 		</section>
