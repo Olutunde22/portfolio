@@ -1,6 +1,6 @@
-import Footer from "./footer";
+import Footer from "../components/footer";
 import "./globals.css";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 
 export const metadata = {
 	title: "Olutunde Solabi",

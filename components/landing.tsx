@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function Landing() {
@@ -10,16 +9,16 @@ export default function Landing() {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5, delay: 0 }}
 			>
-				<h1 className="font-normal mb-5 ml-1 text-lime-400">Hi, my name is</h1>
+				<h1 className="font-normal mb-5 ml-1 text-blue-400">Hi, my name is</h1>
 			</motion.div>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5, delay: 0.1 }}
 			>
-				<h2 className="text-3xl md:text-6xl font-semibold mb-2">
+				<motion.h2 className="text-3xl md:text-6xl font-semibold mb-2">
 					Olutunde Solabi.
-				</h2>
+				</motion.h2>
 			</motion.div>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -41,18 +40,6 @@ export default function Landing() {
 					reprehenderit quis quia veritatis atque quidem perspiciatis
 					repellendus aut ex quas corporis. Repellendus. .
 				</p>
-			</motion.div>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5, delay: 0.4 }}
-			>
-				<a
-					target="_blank"
-					rel="noreferrer"
-				>
-					Yahoo
-				</a>
 			</motion.div>
 		</section>
 	);
