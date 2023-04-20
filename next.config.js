@@ -4,7 +4,12 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  output: 'standalone'
+  output: 'standalone',
+  images: {
+    domains: [
+      'avatars.githubusercontent.com'
+    ]
+  }
 }
 
 module.exports = nextConfig

@@ -14,7 +14,7 @@ const BackgroundShapes = () => (
 				delay: 1,
 				repeatDelay: 0.5,
 			}}
-			className="absolute left-[10%] top-[100px] hidden md:block"
+			className="absolute left-[10%] md:top-[300px] top-[650px] md:block"
 		>
 			<Image alt="" width={150} height={100} src="/shape_one.svg" />
 		</motion.div>
@@ -45,7 +45,7 @@ const BackgroundShapes = () => (
 				repeatType: "mirror",
 				repeatDelay: 0.1,
 			}}
-			className="absolute right-[25%] top-[150px] hidden md:block"
+			className="absolute right-[40%] top-[150px] hidden md:block"
 		>
 			<Image alt="" width={200} height={200} src="/shape_three.svg" />
 		</motion.div>

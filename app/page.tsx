@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Landing from "../components/landing";
 import About from "@/components/about";
 import BackgroundShapes from "@/components/BackgroundShapes";
+import Work from "@/components/Work";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function Home() {
 			<BackgroundShapes />
 			<Landing />
 			<About />
+			<Work />
 		</main>
 	);
 }
