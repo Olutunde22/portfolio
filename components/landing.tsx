@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Landing() {
 	return (
-		<section className="flex justify-center items-start flex-col min-h-screen h-screen max-w-5xl">
+		<section className="flex justify-center items-start flex-col min-h-screen max-w-5xl">
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

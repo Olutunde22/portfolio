@@ -6,7 +6,7 @@ export default function About() {
 	return (
 		<section
 			id="about"
-			className="flex justify-center items-start flex-col min-h-screen h-screen max-w-5xl"
+			className="flex justify-center items-start flex-col min-h-screen max-w-5xl"
 		>
 			<AnimatedDiv>
 				<h1 className="font-normal mb-5 ml-1 text-blue-400 flex items-center">

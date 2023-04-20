@@ -20,7 +20,7 @@ export default function Work() {
 	return (
 		<section
 			id="work"
-			className="flex justify-center items-start flex-col min-h-screen h-screen max-w-5xl"
+			className="flex justify-center items-start flex-col min-h-screen max-w-5xl"
 		>
 			<AnimatedDiv>
 				<h1 className="font-semibold mb-5 ml-1 text-blue-400 text-lg flex items-center">
@@ -43,7 +43,7 @@ export default function Work() {
 									</a>
 									<div className="p-5">
 										<a href="#">
-											<h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+											<h5 className="mb-2 text-2xl font-bold tracking-tight capitalize text-gray-900">
 												{repo.name}
 											</h5>
 										</a>

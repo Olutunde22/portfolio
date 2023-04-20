@@ -14,7 +14,7 @@ const BackgroundShapes = () => (
 				delay: 1,
 				repeatDelay: 0.5,
 			}}
-			className="absolute left-[10%] md:top-[300px] top-[650px] md:block"
+			className="absolute left-[10%] md:top-[300px] top-[550px] md:block"
 		>
 			<Image alt="" width={150} height={100} src="/shape_one.svg" />
 		</motion.div>
