@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const BackgroundShapes = () => (
 	<div>
-		<motion.div
+		{/* <motion.div
 			whileHover={{ scale: 1.2 }}
 			animate={{ rotate: 360 }}
 			transition={{
@@ -17,7 +17,7 @@ const BackgroundShapes = () => (
 			className="absolute left-[10%] md:top-[300px] top-[550px] md:block"
 		>
 			<Image alt="" width={150} height={100} src="/shape_one.svg" />
-		</motion.div>
+		</motion.div> */}
 
 		<motion.div
 			whileHover={{ scale: 1.2 }}
@@ -35,7 +35,7 @@ const BackgroundShapes = () => (
 			<Image alt="" width={100} height={100} src="/shape_two.svg" />
 		</motion.div>
 
-		<motion.div
+		{/* <motion.div
 			whileHover={{ scale: 1.2 }}
 			initial={{ x: -200 }}
 			animate={{ x: 200 }}
@@ -48,7 +48,7 @@ const BackgroundShapes = () => (
 			className="absolute right-[40%] top-[150px] hidden md:block"
 		>
 			<Image alt="" width={200} height={200} src="/shape_three.svg" />
-		</motion.div>
+		</motion.div> */}
 
 		{/* <motion.div className='absolute -left-[30%] md:-left-[39px] top-[60px] md:top-[40px]'>
       <Image

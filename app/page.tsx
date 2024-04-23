@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<main
 			style={inter.style}
-			className="flex min-h-screen flex-col relative items-center justify-between px-6 md:px-12 lg:px-24"
+			className="flex min-h-screen flex-col relative items-center overflow-x-hidden justify-between px-6 md:px-12 lg:px-24"
 		>
 			<BackgroundShapes />
 			<Landing />

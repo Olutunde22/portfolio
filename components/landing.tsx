@@ -34,18 +34,6 @@ export default function Landing() {
 					Who also happens to like watching anime
 				</p>
 			</motion.div>
-			{/* <motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5, delay: 0.3 }}
-			>
-				<p className="lg:max-w-lg text-gray-400">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic nam
-					dolores voluptate asperiores, tenetur officiis officia et
-					reprehenderit quis quia veritatis atque quidem perspiciatis
-					repellendus aut ex quas corporis. Repellendus. .
-				</p>
-			</motion.div> */}
 		</section>
 	);
 }

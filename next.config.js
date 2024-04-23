@@ -7,7 +7,8 @@ const nextConfig = {
   output: 'standalone',
   images: {
     domains: [
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'res.cloudinary.com'
     ]
   }
 }

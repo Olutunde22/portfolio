@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
 	const [top, setTop] = useState(false);
@@ -47,7 +48,13 @@ export default function Navbar() {
 						repeat: 1,
 					}}
 				>
-					<h1 className="font-"> Olutunde</h1>
+					<Image
+						className="rounded-full object-cover h-[45px] w-[45px]"
+						src="/avatar.jpg"
+						width={45}
+						height={45}
+						alt="Neil image"
+					/>
 				</motion.div>
 				<div className="hidden md:flex items-center">
 					<ol className="flex justify-between items-center list-none space-x-9">
@@ -75,11 +82,11 @@ export default function Navbar() {
 								Work
 							</Link>
 						</motion.li>
-						<motion.li className="transition ease-in delay-300">
+						{/* <motion.li className="transition ease-in delay-300">
 							<Link href="/#about" onClick={handleScroll}>
 								Contact
 							</Link>
-						</motion.li>
+						</motion.li> */}
 					</ol>
 					<motion.div
 						animate={{ scale: 1.1 }}

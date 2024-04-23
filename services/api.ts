@@ -9,3 +9,12 @@ export const getGitHubRepos = async () => {
         console.log(err);
     }
 }
+
+export const getProjects = async () => {
+    try {
+        const userRepos = await Axios.get('/api/projects')
+        return userRepos.data
+    } catch (err) {
+        console.log(err);
+    }
+}
