@@ -15,7 +15,10 @@ export default function Work() {
 
 	const getUserRepos = async () => {
 		const repos = await getProjects();
-		setRepos(repos);
+		const sortedRepos = repos.sort((a: { created_at: string | number | Date; }, b: { created_at: string | number | Date; }) => 
+			new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+		);
+		setRepos(sortedRepos);
 	};
 	return (
 		<section

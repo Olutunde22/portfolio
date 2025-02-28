@@ -14,17 +14,34 @@ export default function About() {
 					<span className="block w-28 h-[1px] ml-5 bg-gray-300"></span>
 				</h1>
 				<h2 className="font-semibold text-xl mb-5">Want to know about me?</h2>
+				<p className="mb-5">
+					I’m Olutunde Solabi, a frontend-focused software engineer passionate
+					about building intuitive and high-performing web applications. With
+					expertise in React.js, Vue.js, TypeScript, and Next.js, I specialize
+					in creating dynamic and user-friendly interfaces that enhance user
+					experience.
+				</p>
+				<p className="mb-5">
+					I have a strong track record of delivering scalable and maintainable
+					frontend solutions, collaborating closely with UX/UI designers and
+					product managers to translate complex business requirements into
+					seamless interfaces. At OpenDesk, I developed sophisticated
+					applications using React and TypeScript, focusing on reusable
+					components and well-tested code, which significantly improved
+					debugging efficiency.
+				</p>
+				<p className="mb-5">
+					Previously, at Spursmb, I integrated Azure OpenAI services, automated
+					notifications, and optimized data storage, enhancing the platform’s
+					overall performance. My experience spans working with Tailwind CSS,
+					Material UI, Ant Design, and Redux, ensuring that designs are both
+					functional and visually appealing.
+				</p>
 				<p>
-					Sure, I&apos;d be happy to tell you about myself. I have experience in
-					various web development technologies and frameworks, including
-					JavaScript, TypeScript, ReactJS, VueJS, NextJS, NodeJS, and ExpressJS.
-					I have also worked on mobile app development using React Native and
-					have experience with version control using Git and GitHub.
-					Additionally, I have experience working with NoSQL databases like
-					MongoDB and have utilized the Loopback 4 framework in my projects. I
-					am constantly learning and keeping up with the latest trends and
-					technologies in the industry, and I am passionate about leveraging my
-					skills to create innovative solutions.
+					Beyond coding, I thrive in cross-functional collaboration, agile
+					environments, and driving projects to completion ahead of deadlines.
+					I’m always eager to learn new technologies and push the boundaries of
+					frontend development. Let’s build something great! 🚀
 				</p>
 			</AnimatedDiv>
 		</section>
