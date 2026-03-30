@@ -19,7 +19,7 @@ export function ContactSection() {
           </Reveal>
           <Reveal delay={0.16}>
             <Link
-              className="text-2xl md:text-4xl font-bold text-primary hover:text-secondary transition-colors underline decoration-primary/20 underline-offset-8"
+              className="text-2xl md:text-4xl font-bold text-primary hover:text-secondary transition-colors duration-150 ease underline decoration-primary/20 underline-offset-8"
               href="mailto:solabi.tunde@hotmail.com"
             >
               solabi.tunde@hotmail.com
@@ -35,10 +35,12 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-150 ease-out">
                 <LinkedinIcon className="w-5 h-5" />
               </div>
-              <span className="text-xs font-mono opacity-60 group-hover:opacity-100">LinkedIn</span>
+              <span className="text-xs font-mono opacity-60 group-hover:opacity-100 transition-opacity duration-150 ease">
+                LinkedIn
+              </span>
             </Link>
 
             <Link
@@ -47,20 +49,24 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-150 ease-out">
                 <GithubIcon className="w-5 h-5" />
               </div>
-              <span className="text-xs font-mono opacity-60 group-hover:opacity-100">GitHub</span>
+              <span className="text-xs font-mono opacity-60 group-hover:opacity-100 transition-opacity duration-150 ease">
+                GitHub
+              </span>
             </Link>
 
             <Link
               className="group flex flex-col items-center gap-2"
               href="mailto:solabi.tunde@hotmail.com"
             >
-              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary-container transition-all duration-150 ease-out">
                 <MailIcon className="w-5 h-5" />
               </div>
-              <span className="text-xs font-mono opacity-60 group-hover:opacity-100">Email</span>
+              <span className="text-xs font-mono opacity-60 group-hover:opacity-100 transition-opacity duration-150 ease">
+                Email
+              </span>
             </Link>
           </div>
         </Reveal>

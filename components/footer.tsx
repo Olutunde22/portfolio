@@ -12,7 +12,7 @@ export function Footer() {
 
         <div className="flex gap-8">
           <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
             href="https://www.linkedin.com/in/tunde-solabi/"
             target="_blank"
             rel="noopener noreferrer"
@@ -20,7 +20,7 @@ export function Footer() {
             <LinkedinIcon className="w-4 h-4" />
           </Link>
           <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
             href="https://github.com/Olutunde22"
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +28,7 @@ export function Footer() {
             <GithubIcon className="w-4 h-4" />
           </Link>
           <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
             href="mailto:solabi.tunde@hotmail.com"
             target="_blank"
             rel="noopener noreferrer"

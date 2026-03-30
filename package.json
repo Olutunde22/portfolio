@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -47,5 +48,8 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
-  ]
+  ],
+  "engines": {
+    "node": "24.x"
+  }
 }

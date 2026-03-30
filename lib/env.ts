@@ -4,4 +4,4 @@ export const NEXT_PUBLIC_ENV =
 export const isProduction = NEXT_PUBLIC_ENV === "production";
 export const isStaging = NEXT_PUBLIC_ENV === "staging";
 
-export const allowCrawling = isProduction;
+export const allowCrawling = true;

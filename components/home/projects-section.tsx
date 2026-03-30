@@ -67,7 +67,7 @@ export function ProjectsSection() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col bg-surface-container p-2 rounded-2xl hover:scale-105 transition-all duration-300"
+                className="group flex flex-col bg-surface-container p-2 rounded-2xl hover:scale-[1.02] transition-transform duration-200 ease-out"
               >
                 <div className="relative h-52 rounded-xl overflow-hidden mb-6 bg-surface-high">
                   <Image
@@ -117,7 +117,7 @@ export function ProjectsSection() {
                   parity without rebuilding your container.
                 </p>
                 <div className="mt-auto">
-                  <span className="flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all">
+                  <span className="flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all duration-200 ease-out">
                     Read Article <TrendingUp size={20} />
                   </span>
                 </div>

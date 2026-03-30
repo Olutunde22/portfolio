@@ -24,19 +24,17 @@ export function Reveal({
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
 
-  const initial = reduceMotion
-    ? { y: 0, filter: "blur(0px)", opacity: 1 }
-    : { y: 14, filter: "blur(8px)", opacity: 1 };
+  const initial = reduceMotion ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 };
 
   return (
     <motion.div
       className={cn(className)}
       initial={initial}
-      whileInView={{ y: 0, filter: "blur(0px)", opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once, amount }}
       transition={{
         duration: 0.65,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.23, 1, 0.32, 1],
         delay,
       }}
       {...props}

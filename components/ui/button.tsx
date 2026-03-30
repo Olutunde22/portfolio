@@ -5,15 +5,15 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 outline-none select-none focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-105 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-full text-sm font-medium whitespace-nowrap transition-all duration-150 ease-out outline-none select-none focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-br from-primary to-primary-container text-on-primary-container hover:shadow-[0_0_20px_rgba(180,197,255,0.3)] hover:scale-105",
+          "bg-gradient-to-br from-primary to-primary-container text-on-primary-container hover:shadow-[0_0_20px_rgba(180,197,255,0.3)] hover:scale-[1.02]",
         secondary:
-          "bg-surface-highest text-primary ring-1 ring-primary/15 hover:bg-surface-high hover:shadow-[0_0_20px_rgba(78,222,163,0.3)]",
-        ghost: "hover:bg-surface-container hover:scale-105",
+          "bg-surface-highest text-primary ring-1 ring-primary/15 hover:bg-surface-high hover:shadow-[0_0_20px_rgba(78,222,163,0.3)] hover:scale-[1.02]",
+        ghost: "hover:bg-surface-container hover:scale-[1.02]",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

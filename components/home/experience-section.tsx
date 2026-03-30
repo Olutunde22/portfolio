@@ -20,7 +20,7 @@ export function ExperienceSection() {
 
         <div className="space-y-12">
           <Reveal delay={0.16}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-all duration-300">
+            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Autochek Africa</h3>
@@ -64,7 +64,7 @@ export function ExperienceSection() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-all duration-300">
+            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Vaulthill</h3>
@@ -95,7 +95,7 @@ export function ExperienceSection() {
           </Reveal>
 
           <Reveal delay={0.32}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-all duration-300">
+            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">Spur SMB</h3>

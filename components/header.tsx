@@ -25,7 +25,7 @@ export function Header() {
                 <Link
                   key={label}
                   href={href}
-                  className="border-b-2 border-transparent pb-1 transition-colors hover:text-primary hover:border-primary"
+                  className="border-b-2 border-transparent pb-1 transition-colors duration-150 ease hover:text-primary hover:border-primary"
                 >
                   {label}
                 </Link>
