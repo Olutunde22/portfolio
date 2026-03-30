@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo/metadata";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
       "TypeScript",
     ],
     path: "/",
+
     canonicalUrl: siteUrl,
     authors: [{ name: "Olutunde" }],
     image: `${siteUrl}/og-image.png`,
@@ -65,6 +67,7 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
