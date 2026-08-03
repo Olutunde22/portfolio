@@ -1,48 +1,88 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+"use client";
 
-const navLinks = [
-  { href: "#hero", label: "Hero" },
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
-] as const;
+import { useTerminalWindow } from "@/components/terminal-window";
+import { cn } from "@/lib/utils";
+
+const navLinks: { href: string; label: string; accent?: boolean }[] = [
+  { href: "#work", label: "./work" },
+  { href: "#experience", label: "./experience" },
+  { href: "#writing", label: "./writing" },
+  { href: "#contact", label: "./contact", accent: true },
+];
+
+function WindowDot({
+  label,
+  color,
+  onClick,
+  disabled,
+  pulse,
+}: {
+  label: string;
+  color: string;
+  onClick: () => void;
+  disabled?: boolean;
+  pulse?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label}
+      // 24px hit areas keep the 10px dots above the WCAG 2.2 target-size
+      // minimum; the row's negative margin keeps the first dot on the edge.
+      className="group grid size-6 cursor-pointer place-items-center disabled:cursor-not-allowed"
+    >
+      <span
+        className={cn(
+          "size-2.5 rounded-full transition-[filter] duration-150 ease-out",
+          disabled ? "bg-line-strong" : `${color} group-hover:brightness-125`,
+          pulse && !disabled && "animate-pulse-ring"
+        )}
+      />
+    </button>
+  );
+}
 
 export function Header() {
+  const { maximized, maximize, restore, close } = useTerminalWindow();
+
   return (
-    <header className="sticky top-0 z-50 flex h-20 w-full items-center bg-surface/80 shadow-[0px_12px_32px_-4px_rgba(180,197,255,0.08)] backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="text-xl font-black text-primary tracking-tighter">
-          Olutunde Solabi
-        </Link>
+    <header className="border-line bg-bg sticky top-0 z-40 flex flex-wrap items-center justify-between gap-y-3 border-b px-6 py-4 font-mono text-[13px] md:px-9">
+      <div className="flex items-center">
+        <div className="-mx-1.75 flex items-center">
+          <WindowDot label="Close terminal" color="bg-dot-close" onClick={close} />
 
-        <nav aria-label="Main navigation">
-          <div className="hidden items-center gap-6 text-sm font-medium tracking-tight antialiased md:flex">
-            {navLinks.map(({ href, label }) => {
-              return (
-                <Link
-                  key={label}
-                  href={href}
-                  className="border-b-2 border-transparent pb-1 transition-colors duration-150 ease hover:text-primary hover:border-primary"
-                >
-                  {label}
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
+          <WindowDot
+            label="Minimize to normal size"
+            color="bg-dot-minimize"
+            onClick={restore}
+            disabled={!maximized}
+          />
 
-        <div className="hidden items-center gap-4 md:flex">
-          <ThemeToggle />
-          <Button size="sm" asChild>
-            <a href="/Olutunde-Solabi-CV.pdf" download>
-              Download CV
-            </a>
-          </Button>
+          <WindowDot
+            label="Maximize terminal"
+            color="bg-dot-maximize"
+            onClick={maximize}
+            disabled={maximized}
+            pulse
+          />
         </div>
+
+        <span className="text-fg-mute ml-2 hidden sm:inline">olutunde.dev — zsh</span>
       </div>
+
+      <nav aria-label="Main navigation" className="flex flex-wrap gap-x-5 gap-y-2 md:gap-x-7">
+        {navLinks.map(({ href, label, accent }) => (
+          <a
+            key={href}
+            href={href}
+            className={accent ? "text-accent" : "text-fg-mute hover:text-accent"}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }

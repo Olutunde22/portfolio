@@ -1,46 +1,47 @@
-import { GithubIcon, LinkedinIcon } from "@/assets/icons";
-import Link from "next/link";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Footer() {
   return (
-    <footer className="bg-surface w-full py-12">
-      <div className="bg-gradient-to-r from-transparent via-surface-low to-transparent h-[1px] mb-12"></div>
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-8 gap-6 text-sm">
-        <div className="text-secondary font-mono font-bold">
-          Olutunde // {new Date().getFullYear()}
-        </div>
+    <footer
+      className="border-line scroll-mt-20 border-t bg-[radial-gradient(circle_at_80%_100%,rgb(255_107_0/0.08),transparent_50%)] px-6 py-20 md:px-9"
+      id="contact"
+    >
+      <Reveal>
+        <p className="text-accent font-mono text-[14px]">olutunde@web ~ $ sudo hire-me</p>
 
-        <div className="flex gap-8">
-          <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
-            href="https://www.linkedin.com/in/tunde-solabi/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinIcon className="w-4 h-4" />
-          </Link>
-          <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
+        <p className="text-fg-mute mt-2.5 mb-6.5 font-mono text-[13px]">
+          [sudo] permission granted <span className="text-ok">✓</span> — opening channel…
+        </p>
+
+        <a
+          href="mailto:solabi.tunde@hotmail.com"
+          className="hover:text-accent inline-block bg-[linear-gradient(var(--accent),var(--accent))] bg-[length:0%_4px] bg-[position:0_100%] bg-no-repeat font-mono text-[22px] font-bold tracking-[-1px] break-all [transition:background-size_.35s_ease,color_.2s_ease] hover:bg-[length:100%_4px] min-[700px]:text-[52px]"
+        >
+          solabi.tunde@hotmail.com
+        </a>
+
+        <div className="text-fg-mute mt-7.5 flex flex-wrap gap-x-7 gap-y-3 font-mono text-[13px]">
+          <a
             href="https://github.com/Olutunde22"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-fg-mute hover:text-accent"
           >
-            <GithubIcon className="w-4 h-4" />
-          </Link>
-          <Link
-            className="text-muted-foreground hover:text-secondary transition-colors duration-150 ease"
-            href="mailto:solabi.tunde@hotmail.com"
+            github/Olutunde22 ↗
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tunde-solabi/"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-fg-mute hover:text-accent"
           >
-            solabi.tunde@hotmail.com
-          </Link>
+            linkedin/tunde-solabi ↗
+          </a>
+          <span className="w-full md:ml-auto md:w-auto">
+            © {new Date().getFullYear()} — engineered for performance
+          </span>
         </div>
-
-        <p className="text-muted-foreground text-center md:text-right">
-          © {new Date().getFullYear()} Olutunde Solabi. Engineered for Performance.
-        </p>
-      </div>
+      </Reveal>
     </footer>
   );
 }

@@ -1,16 +1,30 @@
-import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, Schibsted_Grotesk, Space_Mono } from "next/font/google";
 import { NavigationLoader } from "@/components/navigation-loader";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import { TerminalWindow } from "@/components/terminal-window";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo/metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const schibstedGrotesk = Schibsted_Grotesk({
+  variable: "--font-schibsted-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
+  axes: ["opsz"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -38,18 +52,11 @@ export const metadata: Metadata = {
     image: `${siteUrl}/og-image.png`,
     imageAlt: "Olutunde - Software Engineer Portfolio",
   }),
-  icons: {
-    icon: [
-      { url: "/favicon-196.png", sizes: "196x196", type: "image/png" },
-      {
-        url: "/manifest-icon-192.maskable.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-    ],
-    apple: "/apple-icon-180.png",
-  },
-  manifest: "/manifest.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0B0B0B",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -58,14 +65,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} font-jakarta h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider>
-          <NavigationLoader />
+    <html
+      lang="en"
+      className={`${spaceMono.variable} ${schibstedGrotesk.variable} ${bricolageGrotesque.variable}`}
+    >
+      <body>
+        <noscript>
+          <style>{`[data-reveal],[data-boot-line]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+
+        <NavigationLoader />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-50 bg-[repeating-linear-gradient(0deg,rgb(255_255_255/0.028)_0_1px,transparent_1px_3px)]"
+        />
+
+        <TerminalWindow>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-        </ThemeProvider>
+        </TerminalWindow>
+
         <Analytics />
         <SpeedInsights />
       </body>

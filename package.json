@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pwa:icons": "pwa-asset-generator public/screen.png public --icon-only --favicon --path '/'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky"
@@ -38,7 +37,6 @@
     "eslint-config-next": "16.2.1",
     "husky": "^9.1.7",
     "prettier": "^3.8.1",
-    "pwa-asset-generator": "^8.1.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

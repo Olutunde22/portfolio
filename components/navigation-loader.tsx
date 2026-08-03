@@ -3,7 +3,7 @@ import NextTopLoader from "nextjs-toploader";
 export function NavigationLoader() {
   return (
     <NextTopLoader
-      color="#B4C5FF"
+      color="#FF6B00"
       initialPosition={0.08}
       crawlSpeed={200}
       height={3}
@@ -11,7 +11,7 @@ export function NavigationLoader() {
       showSpinner={false}
       easing="ease"
       speed={200}
-      shadow="0 0 10px #B4C5FF,0 0 5px #B4C5FF"
+      shadow="0 0 10px #FF6B00,0 0 5px #FF6B00"
     />
   );
 }

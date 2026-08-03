@@ -1,131 +1,109 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { TrendingUp } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
 const projects = [
   {
-    id: 1,
+    index: "01",
+    domain: "tredbase.com",
+    name: "Tredbase",
+    tag: "NEXT.JS / EDTECH",
+    description:
+      "School payments, minus the paperwork. Fee collection and financial tracking for institutions.",
     image: "/projects/tredbase.png",
-    title: "Tredbase",
-    description:
-      "School payment management platform streamlining fee collection and financial tracking for educational institutions.",
-    tags: ["NEXT.JS", "EDTECH"],
-    link: "https://www.tredbase.com/",
+    href: "https://www.tredbase.com/",
   },
   {
-    id: 2,
+    index: "02",
+    domain: "usebash.io",
+    name: "Bash",
+    tag: "NEXT.JS / EVENTS",
+    description: "Event management end to end — plan it, list it, sell the tickets, run the door.",
     image: "/projects/bash.png",
-    title: "Bash",
-    description:
-      "All-in-one event management platform for seamless planning and execution of celebrations.",
-    tags: ["NEXT.JS", "EVENTS"],
-    link: "https://www.usebash.io/",
+    href: "https://www.usebash.io/",
   },
   {
-    id: 3,
+    index: "03",
+    domain: "hancaly.com",
+    name: "Hancaly",
+    tag: "NEXT.JS / SAAS",
+    description:
+      "A handy calendar for appointments — scheduling and booking that stays out of the way.",
     image: "/projects/hancaly.png",
-    title: "Hancaly",
-    description:
-      "Handy calendar for managing all your appointments with seamless scheduling and booking capabilities.",
-    tags: ["NEXT.JS", "SAAS"],
-    link: "https://hancaly.com/",
+    href: "https://hancaly.com/",
   },
   {
-    id: 4,
-    image: "/projects/alliance-chemicals.png",
-    title: "Alliance Chemicals",
+    index: "04",
+    domain: "alliancechemicalsglobal.com",
+    name: "Alliance Chemicals",
+    tag: "REACT / CORPORATE",
     description:
-      "At Alliance Chemicals, we specialize in delivering high-quality chemical solutions tailored to diverse industries across the globe. Our commitment to innovation, quality, and sustainability drives us to meet the evolving needs of our clients.",
-    tags: ["NEXT.JS", "REACT"],
-    link: "https://www.alliancechemicalsglobal.com/",
+      "Global chemical solutions platform — quality and sustainability at industrial scale.",
+    image: "/projects/alliance-chemicals.png",
+    href: "https://www.alliancechemicalsglobal.com/",
   },
 ];
 
 export function ProjectsSection() {
   return (
-    <section className="py-24 px-8 bg-surface-low" id="projects">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <Reveal delay={0}>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-foreground mb-4">
-              Craft & Contributions
-            </h2>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="text-muted-foreground max-w-xl">
-              A selection of enterprise-grade applications and technical literature.
-            </p>
-          </Reveal>
-        </div>
+    <section className="scroll-mt-20 px-6 pt-16 pb-16 md:px-9" id="work">
+      <h2 className="text-accent mb-8 font-mono text-[14px] font-normal">$ open ./work --all</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Reveal key={project.id} delay={0.16 + index * 0.08}>
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col bg-surface-container p-2 rounded-2xl hover:scale-[1.02] transition-transform duration-200 ease-out"
-              >
-                <div className="relative h-52 rounded-xl overflow-hidden mb-6 bg-surface-high">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                    loading={index < 3 ? "eager" : "lazy"}
-                    priority={index === 0}
-                  />
-                </div>
-                <div className="px-4 pb-6 flex flex-col mt-auto">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-base mb-6">{project.description}</p>
-                  <div className="flex gap-2 mt-10">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="default" className="text-[10px]">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-
-          <Reveal delay={0.48}>
-            <div className="lg:col-span-1 bg-gradient-to-br from-primary-container to-surface-container p-1 rounded-2xl h-full">
-              <Link
-                className="bg-surface-lowest h-full p-8 rounded-2xl flex flex-col cursor-pointer"
-                href="https://medium.com/@olutunde/a-cleaner-way-to-inject-runtime-configs-in-react-with-docker-and-nginx-0c6e75af476f"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <Badge variant="secondary" className="text-[10px]">
-                    FEATURED WRITING
-                  </Badge>
-                  <span className="text-muted-foreground text-xs font-mono">10 min read</span>
-                </div>
-                <h3 className="text-2xl font-black text-foreground leading-tight mb-6">
-                  A Cleaner Way to Inject Runtime Configs in React with Docker and nginx
-                </h3>
-                <p className="text-muted-foreground text-sm mb-8">
-                  Exploring DevOps patterns for frontend engineers: How to achieve environment
-                  parity without rebuilding your container.
-                </p>
-                <div className="mt-auto">
-                  <span className="flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all duration-200 ease-out">
-                    Read Article <TrendingUp size={20} />
-                  </span>
-                </div>
-              </Link>
+      <Reveal className="grid gap-6 min-[1000px]:grid-cols-2">
+        {projects.map(({ index, domain, name, tag, description, image, href }, position) => (
+          <a
+            key={index}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-line bg-panel hover:border-accent hover:text-fg block border [transition:transform_.18s_ease,border-color_.18s_ease] hover:-translate-y-1"
+          >
+            <div className="border-line text-fg-mute flex items-center gap-2 border-b px-4.5 py-3 font-mono text-[11px]">
+              <span className="bg-accent size-2 rounded-full" />
+              <span className="bg-line-strong size-2 rounded-full" />
+              <span className="bg-line-strong size-2 rounded-full" />
+              <span className="ml-1.5 truncate">{domain}</span>
+              <span className="ml-auto">{index}</span>
             </div>
-          </Reveal>
+
+            <div className="relative h-[210px]">
+              <Image
+                src={image}
+                alt={`${name} product screenshot`}
+                fill
+                sizes="(max-width: 1000px) 100vw, 610px"
+                className="object-cover object-top"
+                priority={position === 0}
+              />
+            </div>
+
+            <div className="px-4.5 py-5.5">
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="text-[20px] font-bold">{name}</h3>
+                <span className="text-accent font-mono text-[11px] whitespace-nowrap">{tag}</span>
+              </div>
+              <p className="text-fg-mute mt-2.5 text-[14px] leading-[1.6]">{description}</p>
+            </div>
+          </a>
+        ))}
+      </Reveal>
+
+      <a
+        id="writing"
+        href="https://medium.com/@olutunde/a-cleaner-way-to-inject-runtime-configs-in-react-with-docker-and-nginx-0c6e75af476f"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border-line-strong hover:border-accent hover:text-fg mt-6 flex scroll-mt-20 flex-col items-start gap-6 border border-dashed px-8 py-7 md:flex-row md:items-center md:justify-between md:gap-8"
+      >
+        <div>
+          <p className="text-accent mb-2.5 font-mono text-[11px] tracking-[2px] uppercase">
+            Featured writing — 10 min read
+          </p>
+          <h3 className="text-[20px] font-bold">
+            Injecting runtime configs in React with Docker &amp; nginx — the clean way
+          </h3>
         </div>
-      </div>
+        <span className="font-mono text-[13px] whitespace-nowrap">read →</span>
+      </a>
     </section>
   );
 }

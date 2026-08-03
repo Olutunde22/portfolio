@@ -1,135 +1,96 @@
-import { CheckCircle2, Gauge, Database } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+
+const roles = [
+  {
+    dates: "2025 — now",
+    hash: "a97f3e2",
+    head: true,
+    company: "Autochek Africa",
+    title: "Engineer",
+    logs: [
+      "Rebuilt core flows: 2s+ page loads → under 50ms with ISR, in one week.",
+      "Cut memory 90% with aggressive tree-shaking and lazy loading.",
+    ],
+  },
+  {
+    dates: "2023 — 2025",
+    hash: "c50ms01",
+    company: "Vaulthill",
+    title: "Full stack engineer",
+    logs: [
+      "Architected the real-time layer of a metaverse: custom WebSocket protocol, live state sync.",
+    ],
+  },
+  {
+    dates: "2023",
+    hash: "b4dg3s7",
+    company: "Spur SMB",
+    title: "Frontend & backend lead",
+    logs: ["Led frontend and backend — 15% faster loads, 100% WCAG compliant."],
+  },
+  {
+    dates: "2023 — 2025",
+    hash: "0p3nd35",
+    company: "OpenDesk",
+    title: "Frontend developer",
+    logs: [
+      "Built a modular ERP in React and TypeScript — 20% faster feature delivery.",
+      "Set review and unit-test standards that cut production bugs 35%.",
+    ],
+  },
+  {
+    dates: "2022 — 2023",
+    hash: "aje0220",
+    company: "Ajeo",
+    title: "Frontend engineer",
+    logs: [
+      "Centralised state with Redux — 25% fewer UI inconsistency bugs.",
+      "Held 99.9% uptime through peak e-commerce traffic.",
+    ],
+  },
+];
 
 export function ExperienceSection() {
   return (
-    <section className="py-24 px-8 bg-surface" id="experience">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <Reveal delay={0}>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-foreground">
-              Career Trajectory
-            </h2>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="text-muted-foreground font-mono text-sm max-w-xs text-right hidden md:block">
-              Engineered for peak performance and memory efficiency.
-            </p>
-          </Reveal>
-        </div>
+    <Reveal>
+      <section className="scroll-mt-20 px-6 pt-16 md:px-9" id="experience">
+        <h2 className="text-accent mb-8 font-mono text-[14px] font-normal">
+          $ git log --experience
+        </h2>
 
-        <div className="space-y-12">
-          <Reveal delay={0.16}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">Autochek Africa</h3>
-                  <p className="text-primary font-medium">Engineer</p>
-                </div>
-                <div className="text-muted-foreground font-mono text-sm bg-surface-highest px-4 py-1 rounded-full">
-                  2025 — Present
-                </div>
-              </div>
-
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex gap-3">
-                    <CheckCircle2 className="text-secondary text-sm shrink-0 mt-1" size={16} />
-                    <span className="text-xl">
-                      Spearheaded a complete architectural overhaul resulting in a 97% performance
-                      improvement across core flows.
-                    </span>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle2 className="text-secondary text-sm shrink-0 mt-1" size={16} />
-                    <span className="text-xl">
-                      Implemented aggressive tree-shaking and lazy loading strategies, achieving a
-                      90% memory reduction.
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="bg-surface-lowest p-6 rounded-xl border-l-4 border-secondary">
-                  <span className="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">
-                    Key Achievement
-                  </span>
-                  <p className="text-foreground font-medium leading-relaxed text-base">
-                    Achieved a 97% performance improvement by implementing Incremental Static
-                    Regeneration (ISR) for non-dynamic pages, cutting page load times from 2+
-                    seconds to under 50ms within one week of deployment.
-                  </p>
-                </div>
-              </div>
+        {roles.map(({ dates, hash, head, company, title, logs }) => (
+          <div
+            key={company}
+            className="border-line grid gap-x-8 gap-y-4 border-t py-7 [transition:transform_.2s_ease] last:border-b hover:translate-x-2 min-[700px]:grid-cols-[180px_1fr]"
+          >
+            <div className="text-fg-mute font-mono text-[13px]">
+              {dates}
+              <br />
+              <span className="text-hash text-[11px]">{hash}</span>{" "}
+              {head && (
+                <span className="text-accent border-accent border px-1.5 py-px text-[11px]">
+                  HEAD
+                </span>
+              )}
             </div>
-          </Reveal>
 
-          <Reveal delay={0.24}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">Vaulthill</h3>
-                  <p className="text-primary font-medium">Full Stack Engineer</p>
-                </div>
-                <div className="text-muted-foreground font-mono text-sm bg-surface-highest px-4 py-1 rounded-full">
-                  Dec 2023 – May 2025
-                </div>
+            <div>
+              <div className="flex flex-wrap items-baseline gap-3.5">
+                <h3 className="text-[22px] font-bold">{company}</h3>
+                <p className="text-accent font-mono text-[12px] uppercase">{title}</p>
               </div>
 
-              <div className="mt-6">
-                <p className="text-muted-foreground mb-4 text-xl">
-                  Architected the real-time interaction layer for a decentralized metaverse
-                  ecosystem.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 bg-surface-container p-3 rounded-lg border border-primary/5">
-                    <Gauge className="text-primary" size={20} />
-                    <span className="text-sm font-mono">Custom WebSocket Layer</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-surface-container p-3 rounded-lg border border-primary/5">
-                    <Database className="text-primary" size={20} />
-                    <span className="text-sm font-mono">Real-time State Sync</span>
-                  </div>
-                </div>
-              </div>
+              <p className="text-fg-dim mt-3 font-mono text-[13px] leading-[1.8]">
+                {logs.map((log) => (
+                  <span key={log} className="block">
+                    &gt; {log}
+                  </span>
+                ))}
+              </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={0.32}>
-            <div className="group relative bg-surface-low p-8 rounded-2xl hover:bg-surface-container transition-colors duration-200 ease-out">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">Spur SMB</h3>
-                  <p className="text-primary font-medium">Frontend Engineer</p>
-                </div>
-                <div className="text-muted-foreground font-mono text-sm bg-surface-highest px-4 py-1 rounded-full">
-                  Jul – Nov 2023
-                </div>
-              </div>
-
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-4 bg-surface-lowest rounded-lg">
-                  <span className="text-4xl font-black text-secondary block mb-2">15%</span>
-                  <span className="text-xs text-muted-foreground uppercase text-base">
-                    Faster Load Times
-                  </span>
-                </div>
-                <div className="p-4 bg-surface-lowest rounded-lg">
-                  <span className="text-4xl font-black text-primary block mb-2">WCAG</span>
-                  <span className="text-xs text-muted-foreground uppercase text-base">
-                    100% Compliance
-                  </span>
-                </div>
-                <div className="p-4 bg-surface-lowest rounded-lg">
-                  <span className="text-4xl font-black text-foreground block mb-2">7+</span>
-                  <span className="text-xs text-muted-foreground uppercase text-base">
-                    Projects Delivered
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
+          </div>
+        ))}
+      </section>
+    </Reveal>
   );
 }

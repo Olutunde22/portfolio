@@ -1,76 +1,51 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
+import { BootPanel } from "@/components/home/boot-panel";
+import { TypedLine } from "@/components/home/typed-line";
 
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center px-8 overflow-hidden bg-surface"
+      className="grid gap-12 bg-[radial-gradient(circle_at_20%_10%,rgb(255_107_0/0.06),transparent_45%)] px-6 pt-16 pb-16 md:px-9 min-[700px]:pt-19 min-[1000px]:grid-cols-[1fr_380px]"
       id="hero"
     >
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/50 blur-[120px] rounded-full animate-pulse-slow"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/50 blur-[120px] rounded-full animate-pulse-slow"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
+      <Reveal>
+        <p className="text-accent mb-5.5 font-mono text-[14px]">olutunde@web ~ $ whoami</p>
 
-      <div className="relative z-10 max-w-4xl text-center">
-        <Reveal delay={0}>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-foreground mb-4">
-            Olutunde Solabi
-          </h1>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <Badge variant="secondary" className="mb-8">
-            ENGINEER
-          </Badge>
-        </Reveal>
-        <Reveal delay={0.16}>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Building <span className="text-primary font-semibold">scalable</span>, high-performing,
-            and accessible web applications for the next generation of digital experiences.
-          </p>
-        </Reveal>
-        <Reveal delay={0.24}>
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <Button size="lg" asChild>
-              <Link href="#projects">View Projects</Link>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="/Olutunde-Solabi-CV.pdf" download>
-                Download CV
-              </a>
-            </Button>
-          </div>
-        </Reveal>
-      </div>
+        <h1 className="font-display text-[44px] leading-[0.98] font-extrabold tracking-[-1.5px] min-[700px]:text-[84px] min-[700px]:tracking-[-3px]">
+          I make the web feel{" "}
+          <span className="text-accent animate-glitch inline-block">instant.</span>
+        </h1>
 
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 hidden lg:block w-full max-w-xl dark:opacity-40">
-        <div className="bg-surface-lowest rounded-xl overflow-hidden shadow-2xl">
-          <div className="bg-surface-container px-4 py-2 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-red-500"></div>
-            <div className="w-2 h-2 rounded-full bg-secondary"></div>
-            <div className="w-2 h-2 rounded-full bg-primary"></div>
-            <span className="text-[10px] font-mono text-muted-foreground ml-2">
-              architecture.ts
-            </span>
-          </div>
-          <div className="p-4 font-mono text-xs text-secondary-fixed leading-relaxed">
-            <span className="text-primary">interface</span> PerformanceMetrics {"{"}
-            <br />
-            {"  "}fcp: <span className="text-primary">number</span>;<br />
-            {"  "}memoryUsage: <span className="text-primary">&quot;optimized&quot;</span>;<br />
-            {"}"}
-            <br />
-            <span className="text-primary">const</span> engineer = () =&gt;{" "}
-            <span className="text-primary">new</span> Specialist(
-            <span className="text-primary">&quot;Olutunde&quot;</span>);
-          </div>
+        <p className="text-fg-mute mt-7 font-mono text-[14px]">
+          <TypedLine text="// Olutunde Solabi — Senior Frontend Engineer. React, Next.js, TypeScript." />
+        </p>
+
+        <p className="text-fg-dim mt-4 max-w-[560px] text-[18px] leading-[1.6]">
+          Four years of turning heavy, complicated products into interfaces that load in
+          milliseconds and pass every audit. Performance is not a nice-to-have — it&apos;s the
+          product.
+        </p>
+
+        <div className="mt-9.5 flex flex-wrap gap-4 font-mono text-[14px]">
+          <a
+            href="#work"
+            className="bg-accent text-bg hover:bg-accent-hover hover:text-bg px-5.5 py-3.5"
+          >
+            [ view work ]
+          </a>
+          <a
+            href="/Olutunde-Solabi-CV.pdf"
+            download
+            className="border-line-strong hover:border-accent border px-5.5 py-[13px]"
+          >
+            [ download cv ]
+          </a>
         </div>
-      </div>
+      </Reveal>
+
+      <Reveal delay={110} className="self-start">
+        <BootPanel />
+      </Reveal>
     </section>
   );
 }

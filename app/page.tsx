@@ -4,10 +4,11 @@ import {
 } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/hero-section";
-import { AboutSection } from "@/components/home/about-section";
+import { Ticker } from "@/components/home/ticker";
+import { StatsSection } from "@/components/home/stats-section";
 import { ExperienceSection } from "@/components/home/experience-section";
+import { SkillsSection } from "@/components/home/skills-section";
 import { ProjectsSection } from "@/components/home/projects-section";
-import { ContactSection } from "@/components/home/contact-section";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -51,10 +52,11 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <HeroSection />
-      <AboutSection />
+      <Ticker />
+      <StatsSection />
       <ExperienceSection />
+      <SkillsSection />
       <ProjectsSection />
-      <ContactSection />
     </>
   );
 }
