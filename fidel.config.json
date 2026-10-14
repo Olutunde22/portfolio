@@ -1,0 +1,12 @@
+{
+  "designSystemChecks": [
+    {
+      "name": "olutunde-dev-home",
+      "url": "https://olutunde.dev/",
+      "brandKey": "default"
+    }
+  ],
+  "triggers": {
+    "paths": ["app/**", "components/**"]
+  }
+}
